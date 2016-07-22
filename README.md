@@ -64,6 +64,16 @@ $ python manage.py runserver
 Visit http://127.0.0.1:8000/
 ```
 
+### Setup with Docker
+
+After cloning the repo, edit the Dockerfile to configure your username, password, and api key, and then you can build and run the image:  
+```
+$ docker build -t pokelocater .
+$ docker run --rm -it -p 8000:8000 --name pokelocater pokelocater
+```
+
+Once it is up and running, navigate in your browser to `http://localhost:8000/`
+
 ### Notes
 - Note that you will need to view the "https" and not "http" version of your herokuapp for most browsers to allow the code to request your location.
 - Get an email from gmail saying someone attempted to login to your account from virginia (or wherever)? That would be this app. If you deployed to heroku, then your heroku cloud instance IS logging into your gmail account. You are not getting hacked, if you are worried you can review the code [here](https://github.com/emeth-/pokelocater/blob/master/api/pokelocator_api.py#L167), please don't send me threats.
